@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>About — Community Access Project</title>
+<meta name="description" content="The mission of Community Access Project and the people behind it.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;1,6..72,400&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#E9ECE5;
+    --paper-lift:#F4F6F1;
+    --ink:#16211E;
+    --ink-soft:#4C5C55;
+    --rule:#C9D0C7;
+    --signal:#2F5FA8;
+    --signal-soft:#E2E9F4;
+
+    --display:"Archivo",system-ui,sans-serif;
+    --body:"Newsreader",Georgia,serif;
+    --util:"Space Mono",ui-monospace,monospace;
+
+    --page:1080px;
+    --gut:clamp(20px,5vw,56px);
+  }
+
+  *{box-sizing:border-box}
+  html{-webkit-text-size-adjust:100%}
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--ink);
+    font-family:var(--body);
+    font-size:clamp(17px,1.05vw + 14px,20px);
+    line-height:1.62;
+    font-weight:400;
+  }
+  a{color:inherit}
+  :focus-visible{outline:2px solid var(--signal);outline-offset:3px;border-radius:2px}
+
+  .wrap{max-width:var(--page);margin:0 auto;padding-inline:var(--gut)}
+
+  /* ---------- nav ---------- */
+  .nav{
+    position:sticky;top:0;z-index:20;
+    background:color-mix(in srgb,var(--paper) 88%,transparent);
+    backdrop-filter:saturate(160%) blur(8px);
+    border-bottom:1px solid var(--rule);
+  }
+  .nav-in{
+    display:flex;align-items:baseline;justify-content:space-between;gap:24px;
+    padding-block:16px;flex-wrap:wrap;
+  }
+  .mark{
+    font-family:var(--display);
+    font-weight:700;
+    font-size:16px;
+    letter-spacing:.06em;
+    text-transform:uppercase;
+    text-decoration:none;
+  }
+  .nav-links{display:flex;gap:22px;font-family:var(--util);font-size:12.5px;letter-spacing:.04em}
+  .nav-links a{text-decoration:none;color:var(--ink-soft);padding-block:2px;border-bottom:1px solid transparent}
+  .nav-links a:hover{color:var(--ink);border-bottom-color:var(--ink)}
+
+  /* ---------- hero ---------- */
+  .hero{padding-block:clamp(56px,9vw,104px) clamp(32px,5vw,56px)}
+  .eyebrow{
+    font-family:var(--util);font-size:12px;letter-spacing:.14em;text-transform:uppercase;
+    color:var(--ink-soft);margin:0 0 26px;
+    display:flex;align-items:center;gap:12px;
+  }
+  .eyebrow::after{content:"";flex:1;height:1px;background:var(--rule)}
+
+  h1{
+    font-family:var(--display);
+    font-weight:600;
+    font-size:clamp(34px,5.6vw,64px);
+    line-height:1.04;
+    letter-spacing:-.022em;
+    margin:0 0 28px;
+    max-width:17ch;
+    text-wrap:balance;
+  }
+  .lede{
+    max-width:56ch;margin:0;
+    font-size:clamp(18px,.8vw + 15px,21px);
+    line-height:1.6;
+  }
+
+  /* ---------- signature: the index ---------- */
+  .index{
+    margin-top:clamp(44px,6vw,72px);
+    border-top:1px solid var(--ink);
+    border-bottom:1px solid var(--rule);
+    padding-block:20px 24px;
+  }
+  .index-label{
+    font-family:var(--util);font-size:11.5px;letter-spacing:.13em;text-transform:uppercase;
+    color:var(--ink-soft);margin:0 0 18px;
+  }
+  .index-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fill,minmax(148px,1fr));
+    gap:2px 24px;
+    font-family:var(--util);
+    font-size:13px;
+    line-height:1.9;
+  }
+  .index-grid span{
+    display:flex;align-items:baseline;gap:8px;
+    color:var(--ink);
+    white-space:nowrap;overflow:hidden;text-overflow:ellipsis;
+  }
+  .index-grid span::before{
+    content:"";width:5px;height:5px;flex:0 0 auto;
+    background:var(--signal);border-radius:50%;
+    transform:translateY(-2px);
+  }
+
+  /* ---------- sections ---------- */
+  section{scroll-margin-top:78px}
+  .band{border-top:1px solid var(--rule);padding-block:clamp(52px,7vw,88px)}
+  .band-alt{background:var(--paper-lift)}
+
+  .sec-head{display:flex;align-items:baseline;gap:14px;margin:0 0 30px;flex-wrap:wrap}
+  .sec-num{font-family:var(--util);font-size:12px;letter-spacing:.1em;color:var(--signal)}
+  h2{
+    font-family:var(--display);font-weight:600;
+    font-size:clamp(25px,2.4vw,34px);
+    letter-spacing:-.015em;line-height:1.14;margin:0;
+  }
+  h3{
+    font-family:var(--display);font-weight:600;
+    font-size:clamp(18px,1.2vw,21px);
+    letter-spacing:-.005em;margin:0 0 8px;
+  }
+  p{max-width:62ch}
+  .pull{
+    font-size:clamp(19px,1.1vw + 15px,24px);
+    line-height:1.45;max-width:34ch;
+    font-weight:400;
+    margin:0;
+  }
+
+  .split{display:grid;grid-template-columns:minmax(0,1fr);gap:clamp(26px,4vw,52px)}
+  @media(min-width:820px){ .split{grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr)} }
+
+  /* ---------- program directory ---------- */
+  .programs{
+    list-style:none;margin:34px 0 0;padding:0;
+    border-top:1px solid var(--rule);
+  }
+  .programs li{
+    display:grid;grid-template-columns:minmax(0,1fr);gap:2px;
+    padding-block:13px;
+    border-bottom:1px solid var(--rule);
+  }
+  @media(min-width:700px){
+    .programs li{grid-template-columns:minmax(0,15.5rem) minmax(0,1fr);gap:0 28px;align-items:baseline}
+  }
+  .programs dt,.prog-name{
+    font-family:var(--display);font-weight:500;font-size:16px;letter-spacing:-.005em;
+  }
+  .prog-note{font-size:15.5px;line-height:1.5;color:var(--ink-soft);margin:0}
+  .list-note{font-size:15.5px;line-height:1.5;color:var(--ink-soft);margin:16px 0 0;max-width:62ch}
+
+  /* ---------- contact ---------- */
+  .contact-line{
+    font-family:var(--display);font-weight:500;
+    font-size:clamp(20px,2vw,28px);letter-spacing:-.01em;
+    margin:22px 0 0;
+  }
+  .contact-line a{
+    text-decoration:none;
+    border-bottom:2px solid var(--signal);
+    padding-bottom:2px;
+  }
+  .contact-line a:hover{background:var(--signal-soft)}
+
+  /* ---------- footer ---------- */
+  footer{
+    border-top:1px solid var(--ink);
+    padding-block:30px 46px;
+    font-family:var(--util);font-size:12px;line-height:1.9;letter-spacing:.02em;
+    color:var(--ink-soft);
+  }
+  footer .foot-in{display:flex;justify-content:space-between;gap:18px;flex-wrap:wrap}
+  footer strong{color:var(--ink);font-weight:700}
+
+  @media(prefers-reduced-motion:reduce){
+    *{animation:none!important;transition:none!important;scroll-behavior:auto!important}
+  }
+
+  /* ---------- people ---------- */
+  .founder{
+    display:grid;grid-template-columns:minmax(0,1fr);gap:22px;
+    background:var(--paper-lift);border:1px solid var(--rule);
+    padding:clamp(20px,3vw,32px);
+  }
+  @media(min-width:640px){ .founder{grid-template-columns:200px minmax(0,1fr);gap:32px;align-items:start} }
+  .founder img{width:100%;max-width:280px;height:auto;display:block;border:1px solid var(--rule)}
+  .founder p{margin:12px 0 0}
+  .role{
+    font-family:var(--util);font-size:12px;letter-spacing:.1em;text-transform:uppercase;
+    color:var(--ink-soft);margin:0;
+  }
+  .board-label{
+    font-family:var(--util);font-size:11.5px;letter-spacing:.13em;text-transform:uppercase;
+    color:var(--ink-soft);margin:44px 0 16px;
+  }
+  .board{
+    list-style:none;margin:0;padding:0;
+    display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:16px;
+  }
+  .board li{border:1px solid var(--rule);background:var(--paper-lift);padding:18px 20px}
+  .board img{width:100%;height:auto;display:block;border:1px solid var(--rule);margin:0 0 16px}
+  .board h3{margin:0 0 4px}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="wrap nav-in">
+    <a class="mark" href="/">Community Access Project</a>
+    <div class="nav-links">
+      <a href="/#directory">Benefits directory</a>
+      <a href="/#yinzlist">Yinzlist</a>
+      <a href="/about/">About</a>
+    </div>
+  </div>
+</nav>
+
+<section class="band wrap" id="mission" style="border-top:0">
+  <div class="sec-head"><span class="sec-num">01</span><h2>Our mission</h2></div>
+  <div class="split">
+    <p class="pull">Free tools for finding what&rsquo;s available near you.</p>
+    <div>
+      <p>Community Access Project builds software that surfaces two things people miss: public assistance they already qualify for, and community events nearby.</p>
+    </div>
+  </div>
+</section>
+
+<section class="band wrap" id="who">
+  <div class="sec-head"><span class="sec-num">02</span><h2>Who we are</h2></div>
+
+  <div class="founder">
+    <img src="/assets/founder.jpg" width="926" height="1100" alt="Jacob Makarsky smiling in a green hoodie with a Parade Day Dash medal.">
+    <div>
+      <h3>Jacob Makarsky</h3>
+      <p class="role">Founder · Software engineer</p>
+      <p>I&rsquo;m Jacob, a software engineer from Westmoreland County, now living in Pittsburgh. When I moved to the city in 2026, I tried to find resources my family might qualify for and things for us to do, but it became very time consuming, and I realized that most people would have a hard time finding the resources and events hidden deep in the "corners" I'd been finding. So I started Community Access Project. I hope our tools help you find what Pittsburgh has to offer!</p>
+    </div>
+  </div>
+
+  <p class="board-label">Board of directors</p>
+  <ul class="board">
+    <li><img src="/assets/gianna.jpg" width="880" height="1100" alt="Gianna Blawas smiling in a red leather jacket."><h3>Gianna Blawas</h3><p class="role">Director of Marketing and Outreach</p></li>
+  </ul>
+
+  <p class="contact-line"><a href="mailto:info@communityaccessproject.org">info@communityaccessproject.org</a></p>
+</section>
+
+<footer>
+  <div class="wrap foot-in">
+    <div><strong>Community Access Project Inc.</strong><br>502 W 7th St, Ste 100 &middot; Erie, PA 16502</div>
+    <div>
+      info@communityaccessproject.org<br>
+      <a href="https://yinzlist.com">yinzlist.com</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
